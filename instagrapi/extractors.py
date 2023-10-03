@@ -330,6 +330,9 @@ def extract_direct_message(data):
     if xma_media_share:
         data["xma_share"] = extract_media_v1_xma(xma_media_share[0])
 
+    if 'xma_story_share' in data : 
+        data['xma_share'] = extract_media_v1_xma(data['xma_story_share'][0])
+
     return DirectMessage(**data)
 
 
